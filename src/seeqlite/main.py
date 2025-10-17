@@ -89,7 +89,7 @@ def interactive_viewer(db_file):
             if choice == 'q':
                 print("Exiting.")
                 break
-
+ 
             try:
                 choice_index = int(choice) - 1
                 if 0 <= choice_index < len(tables):
@@ -108,11 +108,14 @@ def interactive_viewer(db_file):
         if conn:
             conn.close()
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) != 2:
         sys.exit(1)
 
     database_file = sys.argv[1]
     interactive_viewer(database_file)
+
+if __name__ == "__main__":
+    main()
 
 
